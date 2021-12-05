@@ -1,0 +1,126 @@
+<?php $this->partial('aside_subscription'); ?>
+
+<div class="post drop-section">
+	<div class="link-back-wrapper">
+		<a class="link-back" href="<?= _url('index', 'index') ?>"><?= _t('gen.action.back_to_rss_feeds') ?></a>
+	</div>
+
+	<h1><?= _t('sub.menu.add') ?></h1>
+	<h2><?= _t('sub.title.add_category') ?></h2>
+	<form action="<?= _url('category', 'create') ?>" method="post">
+		<input type="hidden" name="_csrf" value="<?= FreshRSS_Auth::csrfToken() ?>" />
+		<div class="form-group">
+			<label class="group-name" for="new-category"><?= _t('sub.category') ?></label>
+			<div class="group-controls">
+				<input id="new-category" name="new-category" type="text" autocomplete="off"/>
+			</div>
+		</div>
+
+		<div class="form-group form-actions">
+			<div class="group-controls">
+				<button type="submit" class="btn btn-important"><?= _t('gen.action.add') ?></button>
+			</div>
+		</div>
+	</form>
+
+	<h2><?= _t('sub.title.add_feed') ?></h2>
+	<form id="add_rss" method="post" action="<?= _url('feed', 'add') ?>" autocomplete="off">
+		
+		<input type="hidden" name="_csrf" value="<?= FreshRSS_Auth::csrfToken() ?>" />
+
+		<div class="form-group">
+			<label class="group-name" for="url_rss"><?= _t('sub.feed.url') ?></label>
+			<div class="group-controls">
+				<input id="url_rss" name="url_rss" type="url" required="required" autocomplete="off" class="long" autofocus="autofocus" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="group-name" for="category"><?= _t('sub.category') ?></label>
+			<div class="group-controls">
+				<select name="category" id="category">
+				<?php foreach ($this->categories as $cat) { ?>
+				<option value="<?= $cat->id() ?>"<?= $cat->id() == 1 ? ' selected="selected"' : '' ?>>
+					<?= $cat->name() ?>
+				</option>
+				<?php } ?>
+				</select>
+			</div>
+		</div>
+
+		<details class="form-advanced">
+			<summary class="form-advanced-title">
+				<?= _t('sub.feed.advanced') ?>
+			</summary>
+
+			<div class="form-group">
+				<label class="group-name" for="http_user"><?= _t('sub.feed.auth.username') ?></label>
+				<div class="group-controls">
+					<input id="http_user" name="http_user" type="text" autocomplete="off"/>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="group-name" for="http_pass"><?= _t('sub.feed.auth.password') ?></label>
+				<div class="group-controls">
+					<div class="stick">
+						<input id="http_pass" name="http_pass" type="password" value="" autocomplete="new-password" />
+						<button type="button" class="btn toggle-password" data-toggle="http_pass"><?= _i('key') ?></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="group-name" for="curl_params_useragent"><?= _t('sub.feed.useragent') ?></label>
+				<div class="group-controls">
+					<div class="stick">
+						<input type="text" name="curl_params_useragent" id="curl_params_useragent" class="extend" value="" placeholder="<?= _t('gen.short.blank_to_disable') ?>" />
+					</div>
+					<p class="help"><?= _i('help') ?> <?= _t('sub.feed.useragent_help') ?></p>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="group-name" for="proxy_type"><?= _t('sub.feed.proxy') ?></label>
+				<div class="group-controls">
+					<select class="number" name="proxy_type" id="proxy_type"><?php
+						foreach(['' => '', 3 => 'NONE', 0 => 'HTTP', 2 => 'HTTPS', 4 => 'SOCKS4', 6 => 'SOCKS4A', 5 => 'SOCKS5', 7 => 'SOCKS5H'] as $k => $v) {
+							echo '<option value="' . $k . '">' . $v . '</option>';
+						}
+					?>
+					</select>
+					<div class="stick">
+						<input type="text" name="curl_params" id="curl_params" class="extend" value="" placeholder="<?= _t('gen.short.blank_to_disable') ?>" />
+					</div>
+					<p class="help"><?= _i('help') ?> <?= _t('sub.feed.proxy_help') ?></p>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="group-name" for="timeout"><?= _t('sub.feed.timeout') ?></label>
+				<div class="group-controls">
+					<input type="number" name="timeout" id="timeout" min="3" max="120" value="" placeholder="<?= _t('gen.short.by_default') ?>" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="group-name" for="ssl_verify"><?= _t('sub.feed.ssl_verify') ?></label>
+				<div class="group-controls">
+					<label class="checkbox" for="ssl_verify">
+						<select name="ssl_verify" id="ssl_verify">
+							<option value=""><?= _t('gen.short.by_default') ?></option>
+							<option value="0"><?= _t('gen.short.no') ?></option>
+							<option value="1"><?= _t('gen.short.yes') ?></option>
+						</select>
+					</label>
+				</div>
+			</div>
+		</details>
+
+		<div class="form-group form-actions">
+			<div class="group-controls">
+				<button type="submit" class="btn btn-important"><?= _t('gen.action.add') ?></button>
+			</div>
+		</div>
+	</form>
+</div>

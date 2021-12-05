@@ -1,0 +1,35 @@
+<?php if (FreshRSS_Auth::hasAccess()) {?>
+<?php $this->partial('aside_configure'); ?>
+<?php } ?>
+
+<div class="post content">
+	<?php if (FreshRSS_Auth::hasAccess()) {?>
+	<div class="link-back-wrapper">
+		<a class="link-back" href="<?= _url('index', 'index') ?>"><?= _t('gen.action.back_to_rss_feeds') ?></a>
+	</div>
+	<?php } ?>
+
+	<h1><?= _t('index.about') ?></h1>
+	<p><?= _t('index.about.freshrss_description') ?></p>
+    <!---
+	<h2><?= _t('index.about.project_website') ?></h2>
+	<a href="<?= FRESHRSS_WEBSITE ?>"><?= FRESHRSS_WEBSITE ?></a>
+    --->
+    
+	<h2><?= _t('index.about.bugs_reports') ?></h2>
+	<?= _t('index.about.github') ?>
+
+    
+	<h2><?= _t('index.about.license') ?></h2>
+	<?= _t('index.about.agpl3') ?>
+    
+    <!---
+	<?php if (FreshRSS_Auth::hasAccess()): ?>
+	<h2><?= _t('index.about.version') ?></h2>
+	<?= FRESHRSS_VERSION ?>
+	<?php endif; ?>
+
+	<h2><?= _t('index.about.credits') ?></h2>
+	<p><?= _t('index.about.credits_content') ?></p>
+	--->
+</div>

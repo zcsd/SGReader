@@ -1,0 +1,7 @@
+{
+  "name": "Flat design",
+  "author": "Marien Fressinaud",
+  "description": "",
+  "version": 0.2,
+  "files": ["_template.css", "flat.css"]
+}
