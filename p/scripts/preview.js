@@ -32,7 +32,7 @@ if (document.readyState && document.readyState !== 'loading') {
 } else {
 	document.addEventListener('DOMContentLoaded', function () {
 		if (window.console) {
-			console.log('FreshRSS waiting for DOMContentLoaded…');
+			console.log('SGReader waiting for DOMContentLoaded…');
 		}
 		init_afterDOM();
 	}, false);

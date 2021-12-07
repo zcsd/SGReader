@@ -42,7 +42,7 @@ function init_crypto_form() {
 
 	if (!(window.dcodeIO)) {
 		if (window.console) {
-			console.log('FreshRSS waiting for bcrypt.js…');
+			console.log('SGReader waiting for bcrypt.js…');
 		}
 		setTimeout(init_crypto_form, 100);
 		return;
@@ -208,7 +208,7 @@ function init_configuration_alert() {
 function init_extra() {
 	if (!window.context) {
 		if (window.console) {
-			console.log('FreshRSS extra waiting for JS…');
+			console.log('SGReader extra waiting for JS…');
 		}
 		window.setTimeout(init_extra, 50);	// Wait for all js to be loaded
 		return;
@@ -226,7 +226,7 @@ if (document.readyState && document.readyState !== 'loading') {
 } else {
 	document.addEventListener('DOMContentLoaded', function () {
 		if (window.console) {
-			console.log('FreshRSS extra waiting for DOMContentLoaded…');
+			console.log('SGReader extra waiting for DOMContentLoaded…');
 		}
 		init_extra();
 	}, false);

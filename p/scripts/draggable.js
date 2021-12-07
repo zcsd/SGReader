@@ -4,7 +4,7 @@
 const init_draggable_list = function () {
 	if (!window.context) {
 		if (window.console) {
-			console.log('FreshRSS draggable list waiting for JS…');
+			console.log('SGReader draggable list waiting for JS…');
 		}
 		setTimeout(init_draggable_list, 50);
 		return;

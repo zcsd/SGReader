@@ -36,7 +36,7 @@ let dragHtml = '';
 function init_draggable() {
 	if (!window.context) {
 		if (window.console) {
-			console.log('FreshRSS category waiting for JS…');
+			console.log('SGReader category waiting for JS…');
 		}
 		setTimeout(init_draggable, 50);
 		return;

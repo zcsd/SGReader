@@ -4,7 +4,7 @@
 const init_integration = function () {
 	if (!window.context) {
 		if (window.console) {
-			console.log('FreshRSS integration waiting for JS…');
+			console.log('SGReader integration waiting for JS…');
 		}
 		setTimeout(init_integration, 50);
 		return;

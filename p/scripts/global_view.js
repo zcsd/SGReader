@@ -101,7 +101,7 @@ function init_global_view() {
 function init_all_global_view() {
 	if (!window.context) {
 		if (window.console) {
-			console.log('FreshRSS Global view waiting for JS…');
+			console.log('SGReader Global view waiting for JS…');
 		}
 		window.setTimeout(init_all_global_view, 50);	// Wait for all js to be loaded
 		return;

@@ -1663,7 +1663,7 @@ function init_normal() {
 	const stream = document.getElementById('stream');
 	if (!stream) {
 		if (window.console) {
-			console.log('FreshRSS waiting for content…');
+			console.log('SGReader waiting for content…');
 		}
 		setTimeout(init_normal, 100);
 		return;
@@ -1708,7 +1708,7 @@ function init_afterDOM() {
 	}
 
 	if (window.console) {
-		console.log('FreshRSS main init done.');
+		console.log('SGReader main init done.');
 	}
 }
 
@@ -1718,7 +1718,7 @@ if (document.readyState && document.readyState !== 'loading') {
 	init_afterDOM();
 } else {
 	if (window.console) {
-		console.log('FreshRSS waiting for DOMContentLoaded…');
+		console.log('SGReader waiting for DOMContentLoaded…');
 	}
 	document.addEventListener('DOMContentLoaded', init_afterDOM, false);
 }
