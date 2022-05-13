@@ -8,7 +8,7 @@ return array(
 		'credits' => '致谢',
 		'credits_content' => '某些设计元素来自于 <a href="http://twitter.github.io/bootstrap/">Bootstrap</a> ，尽管 FreshRSS 并没有使用此框架。<a href="https://git.gnome.org/browse/gnome-icon-theme-symbolic">图标</a> 来自于 <a href="https://www.gnome.org/">GNOME 项目</a>。<em>Open Sans</em> 字体出自 <a href="https://fonts.google.com/specimen/Open+Sans">Steve Matteson</a> 之手。FreshRSS 基于 PHP 框架 <a href="https://github.com/marienfressinaud/MINZ">Minz</a>。',
 		'freshrss_description' => 'SGReader 是基于 FreshRSS 的自托管的 RSS 聚合服务。它不仅轻快又易用，而且强大又易于配置。',
-		'github' => '如有需要或者报告错误，请邮件联系 @zc (itsme.p5i95@aleeas.com)',
+		'github' => '如有需要或者报告错误，请邮件联系 @zc (support@sgreader.com)',
 		'license' => '授权',
 		'project_website' => '项目网站',
 		'title' => '关于',
