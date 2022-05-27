@@ -3,6 +3,16 @@
 <html lang="<?= FreshRSS_Context::$user_conf->language ?>" xml:lang="<?= FreshRSS_Context::$user_conf->language ?>">
 	<head>
 		<meta charset="UTF-8" />
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6228BGFQT"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-J6228BGFQT');
+        </script>
+		
 		<meta name="viewport" content="initial-scale=1.0" />
 		<?= self::headStyle() ?>
 		<script id="jsonVars" type="application/json">

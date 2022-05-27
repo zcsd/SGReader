@@ -139,6 +139,7 @@ class FreshRSS extends Minz_FrontController {
 	}
 
 	public static function preLayout() {
+		header("Content-Security-Policy: default-src * 'unsafe-inline'; img-src * data:; media-src *; style-src 'self' 'unsafe-inline'");
 		header("X-Content-Type-Options: nosniff");
 
 		FreshRSS_Share::load(join_path(APP_PATH, 'shares.php'));
